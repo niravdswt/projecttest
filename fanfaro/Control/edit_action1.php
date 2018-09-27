@@ -1,0 +1,20 @@
+<?php
+
+	include"../action/connect.php";
+	//echo $_POST['number'];
+	
+	$a=implode(",",$_POST['chk']);
+	$date=$_POST['day'].'-'.$_POST['month'].'-'.$_POST['year'];
+	$ins="update user1 set Name='".$_POST['name']."',
+						   Hobby='".$a."',
+						   address='".$_POST['address']."',
+						   gender='".$_POST['gender']."',
+						   contact_type='".$_POST['radio_num']."',
+						   number='".$_POST['number']."',
+						    user_date='".$date."',
+						   course='".$_POST['course']."',
+						   fees='".$_POST['fees']."' where user_id='".$_POST['id']."'";
+							mysql_query($ins);
+							
+							header("location:list1.php");
+?>
